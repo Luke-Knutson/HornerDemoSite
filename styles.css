@@ -498,7 +498,6 @@ section.alt {
 
 .video {
   aspect-ratio: 16 / 9;
-  background-image: url(https://img.youtube.com/vi/lvXGmKw1vyg/maxresdefault.jpg);
   border-radius: 4px;
   position: relative;
   display: flex;
