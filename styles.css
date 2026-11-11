@@ -545,7 +545,7 @@ section.alt {
   text-align: center;
   padding: 30px 16px;
   border-radius: 4px;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: .05em;
   color: var(--blue);
   transition: box-shadow .15s, transform .15s;
