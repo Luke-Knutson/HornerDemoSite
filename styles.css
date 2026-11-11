@@ -433,12 +433,6 @@ nav li ul a:hover {
   padding: 40px 0;
 }
 
-.quick .wrap {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-}
-
 .quick a {
   background: white;
   text-align: center;
@@ -1052,47 +1046,63 @@ header {
 }
 
 /* QUICK LINKS SECTION */
+.quick {
+  background: white;
+  padding: 40px 0;
+}
+
 .quick .wrap {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
   gap: 25px;
 }
 
 /* TOP ROW - TWO IMAGE LINKS */
 .quick-top {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 25px;
   align-items: center;
+  width: 100%;
 }
 
 .quick-top a {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
+  min-width: 0;
+  padding: 0;
+  background: transparent;
 }
 
 .quick-top img {
   display: block;
-  max-width: 100%;
+  width: 100%;
+  max-width: 300px;
   height: auto;
   object-fit: contain;
 }
 
-/* BOTTOM ROW */
+/* BOTTOM ROW - FOUR CARDS */
 .quick-bottom {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 4px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
 }
 
-.quick-tile {
+/* INDIVIDUAL CARDS */
+.quick .quick-tile {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-width: 0;
   min-height: 230px;
-  padding: 0px;
+  padding: 15px 0 0;
+  margin: 0;
   box-sizing: border-box;
 
   background-size: cover;
@@ -1104,7 +1114,7 @@ header {
   text-decoration: none;
 }
 
-/* DARK BACKGROUND OVERLAY */
+/* DARK HOVER OVERLAY */
 .quick-tile::before {
   content: "";
   position: absolute;
@@ -1117,59 +1127,75 @@ header {
   background: rgba(12, 35, 64, 0.7);
 }
 
-/* CONTENT */
+/* CARD CONTENT */
 .quick-tile-content {
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 18px;
   width: 100%;
+  min-width: 0;
 }
 
-/* CIRCULAR IMAGE */
+/* CIRCULAR IMAGES */
 .quick-circle {
   width: 115px;
   height: 115px;
+  flex-shrink: 0;
   border-radius: 50%;
   background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 12px;
-  box-sizing: border-box;
   overflow: hidden;
 }
 
 .quick-circle img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-/* TEXT BUTTON */
-.quick-tile span {
-  display: block;
+/* TEXT BUTTONS */
+.quick .quick-tile span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  min-height: 48px;
   box-sizing: border-box;
-  padding: 12px 10px;
+  padding: 12px 8px;
+  margin: 0;
   background: #9b8442;
   color: white;
   text-align: center;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: bold;
-  text-decoration: none;
+  letter-spacing: .03em;
 }
 
-/* RESPONSIVE */
+.quick-tile:hover span {
+  background: #07182d;
+}
+
+/* TABLETS */
 @media (max-width: 800px) {
   .quick-bottom {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
+/* MOBILE */
 @media (max-width: 500px) {
+  .quick-top {
+    grid-template-columns: 1fr;
+  }
+
   .quick-bottom {
     grid-template-columns: 1fr;
   }
