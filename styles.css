@@ -504,7 +504,7 @@ section.alt {
 
 .video {
   aspect-ratio: 16 / 9;
-  background: #000 center / cover;
+  background-image: url(https://img.youtube.com/vi/lvXGmKw1vyg/maxresdefault.jpg);
   border-radius: 4px;
   position: relative;
   display: flex;
@@ -1049,4 +1049,128 @@ header {
 .search-box:focus-within {
   border-color: #0c2340;
   box-shadow: 0 0 3px rgba(12, 35, 64, .3);
+}
+
+/* QUICK LINKS SECTION */
+.quick .wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* TOP ROW - TWO IMAGE LINKS */
+.quick-top {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  align-items: center;
+}
+
+.quick-top a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.quick-top img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* BOTTOM ROW */
+.quick-bottom {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.quick-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 230px;
+  padding: 0px;
+  box-sizing: border-box;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+/* DARK BACKGROUND OVERLAY */
+.quick-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.quick-tile:hover::before {
+  background: rgba(12, 35, 64, 0.7);
+}
+
+/* CONTENT */
+.quick-tile-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+}
+
+/* CIRCULAR IMAGE */
+.quick-circle {
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.quick-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* TEXT BUTTON */
+.quick-tile span {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 10px;
+  background: #9b8442;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+  .quick-bottom {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .quick-bottom {
+    grid-template-columns: 1fr;
+  }
 }
